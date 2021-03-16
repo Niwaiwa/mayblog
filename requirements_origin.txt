@@ -1,0 +1,11 @@
+Flask
+Flask-Bcrypt
+mysqlclient
+PyJWT
+pytest
+python-dotenv
+SQLAlchemy
+alembic
+schema
+gunicorn
+gevent

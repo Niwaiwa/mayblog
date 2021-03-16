@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    # ports:
+    #   - 5000:5000
+    entrypoint:
+      - gunicorn
+      - --workers
+      - '4'
+      - --worker-class
+      - gevent
+      - --bind
+      - 0.0.0.0:5000
+      - app:app
+    volumes:
+      - .env:/myapp/.env
+
+  nginx:
+    build:
+      context: .
+      dockerfile: DockerfileNginx
+    ports:
+      - 8000:80

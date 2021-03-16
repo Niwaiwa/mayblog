@@ -1,0 +1,7 @@
+# 使用官方的 Python 執行環境作為基本的 Docker 影像
+FROM nginx:1.19
+
+# RUN cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime \
+#     && echo "Asia/Taipei" > /etc/timezone
+
+COPY docker/nginx/* /etc/nginx/

@@ -1,0 +1,27 @@
+version: "3"
+services:
+  # mysql:
+  #   image: mysql:8
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: password
+  #     MYSQL_DATABASE: testdb
+  #     TZ: Asia/Taipei
+  #   ports:
+  #     - 3306:3306
+
+  mariadb:
+    image: mariadb:10.5.8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: testdb
+      TZ: Asia/Taipei
+    ports:
+      - 3306:3306
+    # volume:
+    #   - ./db:/var/lib/mysql
+      # - ./sqls:/docker-entrypoint-initdb.d
+      # - /my/custom.cnf:/etc/mysql/my.cnf
+      # - /my/custom:/etc/mysql/conf.d
+      # - /my/custom_conf.cnf:/etc/mysql/conf.d/config-file.cnf
